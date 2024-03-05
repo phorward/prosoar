@@ -2,16 +2,16 @@ import sys
 import os.path
 
 from flask import Flask, request, render_template
-from flask.ext.babel import Babel, get_locale
+from flask_babel import Babel, get_locale
 from babel.core import negotiate_locale
 
-from views.airports import bp as airports
-from views.height import bp as height
-from views.igc import bp as igc
-from views.search import bp as search
-from views.settings import bp as settings
-from views.tasks import bp as tasks
-from views.waypoints import bp as waypoints
+from .views.airports import bp as airports
+from .views.height import bp as height
+from .views.igc import bp as igc
+from .views.search import bp as search
+from .views.settings import bp as settings
+from .views.tasks import bp as tasks
+from .views.waypoints import bp as waypoints
 
 APP_FOLDER = os.path.abspath(os.path.join(__file__, '..', '..'))
 STORAGE_FOLDER = os.path.join(APP_FOLDER, 'storage')
@@ -31,12 +31,13 @@ app.config['USERS_FOLDER'] = os.path.join(STORAGE_FOLDER, 'users')
 
 babel = Babel(app)
 
-@babel.localeselector
 def get_locale():
+    return "de"  # FIXME!
     preferred = map(lambda x: x.replace('-', '_'),
                     request.accept_languages.values())
     return negotiate_locale(preferred, AVAILABLE_LOCALES)
 
+babel.init_app(app, locale_selector=get_locale)
 
 @app.context_processor
 def inject_get_locale():

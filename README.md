@@ -35,7 +35,7 @@ This source directory is not complete. You need some more things to get started.
 
 1. Install required python modules
 
-   Run `pip install -r requirements.txt`
+   Run `pipenv install && pipenv shell`
 
 2. Download and compile necessary JS/CSS files
 

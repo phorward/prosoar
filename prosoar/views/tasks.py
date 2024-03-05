@@ -4,7 +4,7 @@ from werkzeug.exceptions import NotFound
 import os
 import re
 from datetime import datetime
-from StringIO import StringIO
+from io import StringIO
 
 import qrcode
 

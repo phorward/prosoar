@@ -19,7 +19,9 @@ def load(type='json'):
     type = request.values.get('as', type)
 
     if type == 'js':
-        match = geolite2.lookup(request.remote_addr)
+        # FIXME
+        # match = geolite2.lookup(request.remote_addr)
+        match = None
 
         settings = \
             'var initialSettings = ' + get_user_config_as_json(uid) + ';'

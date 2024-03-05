@@ -18,9 +18,9 @@ clean-deploy:
 # OpenLayers
 
 OPENLAYERS_VERSION = 2.13.1
-OPENLAYERS_NAME = OpenLayers-$(OPENLAYERS_VERSION)
-OPENLAYERS_ARCHIVE = $(OPENLAYERS_NAME).tar.gz
-OPENLAYERS_URL = http://github.com/openlayers/openlayers/releases/download/release-$(OPENLAYERS_VERSION)/$(OPENLAYERS_ARCHIVE)
+OPENLAYERS_NAME = openlayers-$(OPENLAYERS_VERSION)
+OPENLAYERS_ARCHIVE = v$(OPENLAYERS_VERSION).tar.gz
+OPENLAYERS_URL = http://github.com/openlayers/openlayers/archive/refs/tags/$(OPENLAYERS_ARCHIVE)
 OPENLAYERS_JS_FOLDER = $(JS_FOLDER)/OpenLayers
 OPENLAYERS_IMG_FOLDER = $(IMG_FOLDER)/OpenLayers
 
@@ -39,8 +39,8 @@ $(DOWNLOAD_FOLDER)/$(OPENLAYERS_ARCHIVE):
 # MooTools
 
 MOOTOOLS_CORE_VERSION = 1.4.5
-MOOTOOLS_CORE_FILE = mootools-core-$(MOOTOOLS_CORE_VERSION)-full-compat.js
-MOOTOOLS_CORE_URL = http://mootools.net/download/get/$(MOOTOOLS_CORE_FILE)
+MOOTOOLS_CORE_FILE = mootools.js
+MOOTOOLS_CORE_URL = http://ajax.googleapis.com/ajax/libs/mootools/$(MOOTOOLS_CORE_VERSION)/mootools.js
 
 MOOTOOLS_MORE_VERSION = 1.4.0.1
 MOOTOOLS_MORE_ARCHIVE = $(MOOTOOLS_MORE_VERSION).tar.gz

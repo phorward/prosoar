@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 
-import urllib2
+import urllib
 
 bp = Blueprint('search', __name__)
 
@@ -11,7 +11,7 @@ def main(bbox, q):
         '?format=json&limit=1&viewbox=' + bbox + '&email=info@prosoar.de'
 
     try:
-        request = urllib2.urlopen(url)
+        request = urllib.urlopen(url)
         return request.read()
 
     except:

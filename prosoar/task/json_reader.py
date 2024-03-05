@@ -2,7 +2,7 @@ from prosoar.task.task import Task
 from prosoar.task.turnpoint import Turnpoint
 
 import json
-import urllib2
+import urllib
 
 
 def parse_json_task(json_string):
@@ -100,10 +100,10 @@ def get_altitude(lon, lat):
         str(lon) + '/lat' + str(lat)
 
     try:
-        request = urllib2.urlopen(url)
+        request = urllib.urlopen(url)
         reply = request.read()
         height_reply = json.loads(reply)
-    except urllib2.URLError:
+    except urllib.URLError:
         height_reply = '{}'
 
     return float(height_reply.get('height', 0))
