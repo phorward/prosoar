@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "==3.0.2"
+Flask-Migrate = "==4.0.5"
+Flask-Babel = "==4.0"
+babel = "==2.14"
+# xcsoar = "==0.7.0"
+pyproj = "==3.6.1"
+python-geoip-geolite2 = "==2015.0303"
+lxml = "==5.1.0"
+pojson = "==0.7"
+qrcode = "==7.4.2"
+Pillow = "==10.2"
+aerofiles = "==1.2.1"
+
+[requires]
+python_version = "3.11"
